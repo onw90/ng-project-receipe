@@ -1,9 +1,10 @@
-<app-header></app-header>
+<!-- app-header jest tu renderowany i nasluchuje na eventy - recipe lub shopping-list ktore sa przypisane do featureSelected w headerze --> 
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>

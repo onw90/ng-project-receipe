@@ -1,1 +1,16 @@
-<app-recipe-item></app-recipe-item>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+  <hr/>
+  <hr/>
+  
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <!-- [recipe] wiązemy recipe z recipe-item component z elementem w petli tutaj w recipe-list component (mozemy tak zrobic jak w recipe-item przy recipe stoi dekorator @Input - czyli recipe-item pobiera dane z recipe-list czyli z zewnatrz) -->
+    <app-recipe-item *ngFor="let recipeEl of recipes"
+    [recipe]="recipeEl">
+      ></app-recipe-item>
+  </div>
+</div>
